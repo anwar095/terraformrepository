@@ -2,6 +2,14 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+resources:
+  repositories:
+  - repository: repo1
+    endpoint: anwar095
+    trigger: none
+    name: JenkinsPipelines
+    ref: 'refs/heads/main'
+    type: github
 
 trigger:
 - main
@@ -10,7 +18,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: cat Dockerfile
   displayName: 'Run a one-line script'
 
 - script: |

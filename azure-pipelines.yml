@@ -12,14 +12,14 @@ resources:
     type: github
 
 trigger:
-- main
+- none
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
 - checkout: repo1
-- script: ls $(Pipeline.Workspace)/s/
+- script: cat $(Pipeline.Workspace)/s/Dockerfile
   displayName: 'Run a one-line script'
 
 - script: |

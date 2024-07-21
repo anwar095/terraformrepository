@@ -10,19 +10,27 @@ resources:
     name: anwar095/JenkinsPipelines
     ref: 'refs/heads/main'
     type: github
+  pipelines:
+  - pipeline: pipeline1
+    source: anwar095.java-repo    
+    trigger:  none
 
 trigger:
 - none
 
 pool:
   vmImage: ubuntu-latest
+jobs:
+- job: deploy_windows_x86_agent
+  steps:
+  - checkout: repo1
+  - script: cat $(Pipeline.Workspace)/s/Dockerfile
+    displayName: 'Run a one-line script'
+  - download: pipeline1
+    artifact: WebTier1
+    patterns: '**/*.war'
 
-steps:
-- checkout: repo1
-- script: cat $(Pipeline.Workspace)/s/Dockerfile
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'

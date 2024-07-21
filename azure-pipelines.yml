@@ -27,7 +27,7 @@ jobs:
   - script: cat $(Pipeline.Workspace)/s/Dockerfile
     displayName: 'Run a one-line script'
   - download: pipeline1
-    artifact: WebTier1
+    artifact: drop
     patterns: '**/*.war'
 
   - script: |

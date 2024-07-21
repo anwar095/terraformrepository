@@ -19,7 +19,7 @@ pool:
 
 steps:
 - checkout: repo1
-- script: ls $(Pipeline.Workspace)/
+- script: ls $(Pipeline.Workspace)/repo1
   displayName: 'Run a one-line script'
 
 - script: |

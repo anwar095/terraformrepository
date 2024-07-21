@@ -18,6 +18,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- checkout: repo1
 - script: ls $(Pipeline.Workspace)/
   displayName: 'Run a one-line script'
 

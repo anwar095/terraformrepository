@@ -7,7 +7,7 @@ resources:
   - repository: repo1
     endpoint: anwar095
     trigger: none
-    name: JenkinsPipelines
+    name: anwar095/JenkinsPipelines
     ref: 'refs/heads/main'
     type: github
 
